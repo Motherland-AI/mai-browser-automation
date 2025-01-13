@@ -1,12 +1,11 @@
-import unittest
-import os
+import os, time, unittest
 #from selenium.common.exceptions import WebDriverException
 from src.mai_browser_automation import WebDriverException, ChromeBrowser
 
 class TestWebBrowser(unittest.TestCase):
     def setUp(self):
         self.driver_path = "C:\\Users\\USER\\Documents\\Tech\\chromedriver-win64\\chromedriver.exe"
-        self.browser_path = "C:\\Users\\USER\\Documents\\Tech\\chrome-win64"
+        self.browser_path = "C:\\Users\\USER\\Documents\\Tech\\chrome-win64\\chrome.exe"
     
     """
     def test_wrong_driver_path(self):
@@ -21,7 +20,8 @@ class TestWebBrowser(unittest.TestCase):
     def test_web_browser_initialization(self):
         try:
             chrome = ChromeBrowser(self.driver_path, self.browser_path)
-            #chrome = chrome()
+            time.sleep(5)
+            chrome.quit()
             self.assertIsNotNone(chrome)
         except WebDriverException as e:
             self.fail(f"web_browser initialization failed with exception: {e}")

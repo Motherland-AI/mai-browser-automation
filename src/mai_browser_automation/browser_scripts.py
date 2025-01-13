@@ -1,35 +1,15 @@
 import os
 
-chrome_driver_path = "" #predefined driver path
-chrome_browser_path = "" #predefined browser path
-
-driver_file = "chromedriver.exe"
-browser_file = "chrome.exe"
-
-
 #This code will be called upon initializing a web_browser @*_browser.py
-#This is to ensure we have the correct browser and driver paths
-#And to ensure we can find the files there as well
-def verifyBrowserNDriverFiles(driver_path, browser_path):
-    driver_file_path = os.path.join(driver_path, "chromedriver.exe")
-    browser_file_path = os.path.join(browser_path, "chrome.exe")
+#This is to ensure we have the correct paths to the browser and driver files
+def verifyBrowserNDriverFiles(driver_file, browser_file):
+    #*This script can be expanded to check if the file is an executable file
+    #*And to compare the size of the file to a reasonable size (i.e expected to be greater than a specific size)
+    #*However checking for executable file more require more code for cross platform compatibility 
 
-    if not os.path.exists(driver_path):
-        raise FileNotFoundError(f"Driver path does not exist: {driver_path}")
-    if not os.path.isfile(driver_file_path):
-        raise FileNotFoundError(f"Driver file {driver_file} does not exist at path: {driver_path}")
-    if not os.path.exists(browser_path):
-        raise FileNotFoundError(f"Browser path does not exist: {browser_path}")
-    if not os.path.isfile(browser_file_path):
-        raise FileNotFoundError(f"Browser file {browser_file} does not exist at path: {browser_path}")
-    
-    #print("Both driver and browser files exist.")
+    if not os.path.isfile(driver_file):
+        raise FileNotFoundError(f"Driver file cannot be found at: {driver_file}")
+    if not os.path.isfile(browser_file):
+        raise FileNotFoundError(f"Browser file cannot be found at: {driver_file}")
+
     return True
-
-#I am not sure of the function of the code below so am commenting it out
-"""
-__all__ = [
-    "chrome_browser",
-    "chrome_driver"
-]
-"""
