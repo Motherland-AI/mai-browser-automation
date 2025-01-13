@@ -1,0 +1,15 @@
+[project]
+name = "mai_browser_automation"
+version = "0.0.1"
+authors = [
+  { name="Prince Adetoye", 
+  email="princegbabuwo@gmail.com" 
+  },
+]
+description = "Browser Automation Package For MotherLand AI"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
