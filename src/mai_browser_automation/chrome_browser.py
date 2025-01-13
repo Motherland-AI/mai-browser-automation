@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.options import Options
 def web_browser(driver_file, chrome_file, url="https://www.google.com", chrome_options=[]):
     #we want to be sure the path received are correct before passing them down into our code
     #otherwise verifyBrowserNDriverFiles will throw an error
-    #browser_scripts.verifyBrowserNDriverFiles(driver_file, chrome_file)
+    browser_scripts.verifyBrowserNDriverFiles(driver_file, chrome_file)
 
     options = Options() #instantiate Chrome Options
     service = Service(executable_path=driver_file) #instantiate Chrome Service         
